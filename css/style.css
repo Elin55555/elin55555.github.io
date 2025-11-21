@@ -602,3 +602,12 @@ nav#footer{
 }
 #footer a:hover{
 	color: #c59a6d;}
+
+/* Custom styles for contact links */
+.contact-info a {
+    color: #FFD700 !important; /* Gold color */
+    text-decoration: underline;
+}
+.contact-info a:hover {
+    color: #FFFFFF !important; /* White on hover */
+}
