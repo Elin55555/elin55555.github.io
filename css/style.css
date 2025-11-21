@@ -703,14 +703,30 @@ nav#footer{
     margin: 0;
 }
 
-/* 全体の文字サイズを底上げ */
-body {
-    font-size: 16px; /* または 18px */
-    line-height: 1.8; /* 行間を広めにとる */
+
+/* --- ここからコピー --- */
+
+/* 1. サイト全体の基準サイズをアップ */
+html, body {
+    font-size: 18px !important; /* 一般的な16pxより一回り大きく */
 }
 
-/* AboutとContactを特に見やすく */
-#about p, .about-text,
-#contact p, .contact-text {
-    font-size: 1.1rem; /* ベースより少し大きく */
+/* 2. 文章、リスト、リンクの文字を大きく・行間を広げる */
+p, li, a, span {
+    font-size: 1rem !important; /* 基準の18pxを使う */
+    line-height: 1.9 !important; /* 行間をかなり広めに（読みやすさ直結） */
+    letter-spacing: 0.03em; /* 文字間隔を少し空ける */
 }
+
+/* 3. 特にAboutとContactの本文はさらに大きく */
+#meet-us p, #contact p {
+    font-size: 1.1rem !important; /* 約20pxになります */
+}
+
+/* 4. 見出し（About Meなど）もバランスをとって大きく */
+h1 { font-size: 3.5rem !important; }
+h2 { font-size: 2.8rem !important; margin-bottom: 30px; }
+h3 { font-size: 2.2rem !important; }
+h4 { font-size: 1.5rem !important; }
+
+/* --- ここまで --- */
