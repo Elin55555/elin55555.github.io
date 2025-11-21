@@ -702,3 +702,17 @@ nav#footer{
     color: #666;
     margin: 0;
 }
+
+/* --- Servicesセクション（Key Competencies）の文字サイズ調整 --- */
+
+/* 見出し（Data Analysis & Modeling など）を大きくする */
+#services h4 {
+    font-size: 1.5em; /* 元の1.5倍の大きさ */
+    line-height: 1.4; /* 行間を少し広げて読みやすく */
+}
+
+/* 説明文（Proficient in SQL... など）を大きくする */
+#services p {
+    font-size: 1.2em; /* 元の1.2倍の大きさ */
+    line-height: 1.8; /* 行間をゆったりと */
+}
