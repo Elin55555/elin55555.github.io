@@ -611,3 +611,95 @@ nav#footer{
 .contact-info a:hover {
     color: #FFFFFF !important; /* White on hover */
 }
+
+
+
+/* --- Layout & Spacing --- */
+.section-padding {
+    padding: 80px 0;
+}
+
+.mb-5 {
+    margin-bottom: 50px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+/* --- Typography & Decor --- */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    font-weight: 300;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.line-divider {
+    width: 60px;
+    height: 3px;
+    background-color: #007bff; /* サイトのテーマカラーに合わせて変更可 */
+    margin: 0 auto;
+}
+
+/* --- About Text Area --- */
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: left; /* 文章は左揃えで読みやすく */
+}
+
+/* --- Skills Box Area --- */
+.skills-box {
+    background-color: #f8f9fa; /* 薄いグレーの背景 */
+    padding: 40px;
+    border-radius: 8px;
+    border-left: 5px solid #007bff; /* 左にアクセントカラーの線 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.skills-title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    text-align: center; /* タイトルは中央 */
+}
+
+.skill-item {
+    margin-bottom: 25px;
+    text-align: left; /* スキル説明は左揃え */
+    border-bottom: 1px solid #eee; /* 区切り線 */
+    padding-bottom: 15px;
+}
+
+.skill-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.skill-item strong {
+    display: block;
+    font-size: 1.15rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.skill-item .text-muted {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
