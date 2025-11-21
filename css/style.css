@@ -703,3 +703,14 @@ nav#footer{
     margin: 0;
 }
 
+/* 全体の文字サイズを底上げ */
+body {
+    font-size: 16px; /* または 18px */
+    line-height: 1.8; /* 行間を広めにとる */
+}
+
+/* AboutとContactを特に見やすく */
+#about p, .about-text,
+#contact p, .contact-text {
+    font-size: 1.1rem; /* ベースより少し大きく */
+}
