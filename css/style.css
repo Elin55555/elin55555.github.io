@@ -706,30 +706,37 @@ nav#footer{
 
 /* --- ここからコピー --- */
 
-/* 1. サイト全体の基準サイズをアップ */
-html, body {
-    font-size: 16px !important; /* 一般的な16pxより一回り大きく */
-}
+<style>
+    /* 1. ページ全体の基本サイズを「標準＋α」に設定 */
+    html, body {
+        font-size: 16px !important; /* 18pxから16pxへ縮小 */
+        line-height: 1.7 !important; /* 行間も少し引き締め */
+    }
 
-/* 2. 文章、リスト、リンクの文字を大きく・行間を広げる */
-p, li, a, span {
-    font-size: 1rem !important; /* 基準の18pxを使う */
-    line-height: 1.8!important; /* 行間をかなり広めに（読みやすさ直結） */
-    letter-spacing: 0.03em; /* 文字間隔を少し空ける */
-}
+    /* 2. 本文やリンクの文字サイズ */
+    p, a, li, span, div {
+        font-size: 16px !important; /* ベースと同じサイズに統一 */
+    }
 
-/* 3. 特にAboutとContactの本文はさらに大きく */
-#meet-us p, #contact p {
-    font-size: 1.1rem !important; /* 約20pxになります */
-}
+    /* 3. 見出し（H1, H2など）も連動して少し小さく */
+    h1 { font-size: 2.8rem !important; } /* タイトル */
+    h2 { font-size: 2.2rem !important; } /* About Meなど */
+    h3 { font-size: 1.8rem !important; } /* 小見出し */
+    h4 { font-size: 1.4rem !important; } 
 
-/* 4. 見出し（About Meなど）もバランスをとって大きく */
-h1 { font-size: 3.5rem !important; }
-h2 { font-size: 2.8rem !important; margin-bottom: 30px; }
-h3 { font-size: 2.2rem !important; }
-h4 { font-size: 1.5rem !important; }
-
-/* --- ここまで --- */
+    /* 4. 名前（Elin Johan）の特別調整 */
+    .header-text h1 {
+        font-size: 48px !important; /* 巨大化を防ぐ */
+        line-height: 1.2 !important;
+    }
+    /* 名前の枠のズレ防止 */
+    .header-text.btn {
+        font-size: unset !important;
+        padding: 15px 30px !important;
+        height: auto !important;
+        width: auto !important;
+    }
+</style>
 
 /* 1. 四角い枠（btn）の文字サイズ制限を解除して、枠自体も広げる */
 .header-text.btn {
