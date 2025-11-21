@@ -707,36 +707,60 @@ nav#footer{
 /* --- ここからコピー --- */
 
 <style>
-    /* 1. ページ全体の基本サイズを「標準＋α」に設定 */
+    /* =========================================
+       最強の上書き設定（ここをコピーして貼り付け）
+    ========================================= */
+
+    /* 1. 全体のベース（標準的な読みやすさ） */
     html, body {
-        font-size: 16px !important; /* 18pxから16pxへ縮小 */
-        line-height: 1.7 !important; /* 行間も少し引き締め */
+        font-size: 16px !important;
+        line-height: 1.75 !important;
+    }
+    p, a, li, div { font-size: 16px !important; }
+
+
+    /* ▼▼▼ ここからが今回のキモです ▼▼▼ */
+
+    /* 2. 上のタイトル（Extracting...の部分）を巨大化 */
+    .home .content h4 {
+        font-size: 2.5rem !important; /* 40px相当。かなり大きいです */
+        font-weight: 800 !important;  /* 太くして存在感を出す */
+        line-height: 1.3 !important;
+        margin-bottom: 30px !important;
+        color: #ffffff !important;    /* 白ではっきり表示 */
+        text-transform: none !important; /* 全て大文字になるのを防ぐ */
     }
 
-    /* 2. 本文やリンクの文字サイズ */
-    p, a, li, span, div {
-        font-size: 16px !important; /* ベースと同じサイズに統一 */
-    }
-
-    /* 3. 見出し（H1, H2など）も連動して少し小さく */
-    h1 { font-size: 2.8rem !important; } /* タイトル */
-    h2 { font-size: 2.2rem !important; } /* About Meなど */
-    h3 { font-size: 1.8rem !important; } /* 小見出し */
-    h4 { font-size: 1.4rem !important; } 
-
-    /* 4. 名前（Elin Johan）の特別調整 */
-    .header-text h1 {
-        font-size: 48px !important; /* 巨大化を防ぐ */
-        line-height: 1.2 !important;
-    }
-    /* 名前の枠のズレ防止 */
+    /* 3. 名前（Elin Johan）の四角い枠の制限を破壊 */
     .header-text.btn {
-        font-size: unset !important;
-        padding: 15px 30px !important;
-        height: auto !important;
-        width: auto !important;
+        width: auto !important;       /* 横幅の制限を解除 */
+        height: auto !important;      /* 高さの制限を解除 */
+        padding: 20px 50px !important;/* 枠の内側を広げる */
+        background: rgba(255,255,255,0.1) !important; /* 枠の背景を少し透明に */
+        border: 3px solid #fff !important; /* 枠線を太く */
     }
+
+    /* 4. 名前の中身を強制的に巨大化 */
+    .header-text h1 {
+        font-size: 4rem !important;  /* 64px相当！これで小さかったら嘘です */
+        margin: 0 !important;
+        line-height: 1 !important;
+        font-weight: 900 !important; /* 超極太 */
+        letter-spacing: 2px !important;
+        white-space: nowrap !important; /* 意地でも1行で表示させる */
+    }
+
+    /* (スマホで見た時だけ、名前がはみ出ないように少し調整) */
+    @media (max-width: 768px) {
+        .header-text h1 {
+            font-size: 2.5rem !important; /* スマホでは少し控えめに */
+            white-space: normal !important; /* スマホでは折り返しを許可 */
+        }
+    }
+    /* ▲▲▲ ここまで ▲▲▲ */
+
 </style>
+
 
 /* 1. 四角い枠（btn）の文字サイズ制限を解除して、枠自体も広げる */
 .header-text.btn {
