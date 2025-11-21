@@ -716,3 +716,7 @@ nav#footer{
     font-size: 1.2em; /* 元の1.2倍の大きさ */
     line-height: 1.8; /* 行間をゆったりと */
 }
+
+html{
+	font-size: 18px;
+}
