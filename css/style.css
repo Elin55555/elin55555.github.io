@@ -708,13 +708,13 @@ nav#footer{
 
 /* 1. サイト全体の基準サイズをアップ */
 html, body {
-    font-size: 18px !important; /* 一般的な16pxより一回り大きく */
+    font-size: 16px !important; /* 一般的な16pxより一回り大きく */
 }
 
 /* 2. 文章、リスト、リンクの文字を大きく・行間を広げる */
 p, li, a, span {
     font-size: 1rem !important; /* 基準の18pxを使う */
-    line-height: 1.9 !important; /* 行間をかなり広めに（読みやすさ直結） */
+    line-height: 1.8!important; /* 行間をかなり広めに（読みやすさ直結） */
     letter-spacing: 0.03em; /* 文字間隔を少し空ける */
 }
 
