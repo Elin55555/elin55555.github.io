@@ -34,6 +34,18 @@
     <link rel="stylesheet" type="text/css"  href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
+    <style>
+    /* コンタクトセクションのアイコンリストを強制的に修正 */
+    #contact ul.icons li {
+        list-style-type: none !important; /* あの「・」を絶対に消す命令 */
+        display: inline-block !important; /* 絶対に横並びにする命令 */
+    }
+    /* KaggleのSVGアイコンの位置を他のアイコンと揃える微調整 */
+    #contact ul.icons li a svg {
+        vertical-align: text-bottom !important;
+        margin-bottom: 3px !important;
+    }
+</style>
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
