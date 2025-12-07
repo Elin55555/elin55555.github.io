@@ -1,20 +1,25 @@
 # Airline Loyalty Program Analysis
 
 ## 1. Project Overview
-**Objective:** To evaluate the performance of the airline's loyalty program and identify high-value customer segments. The goal is to provide data-driven recommendations for optimizing marketing strategies and increasing customer lifetime value (CLV).
+**Objective:**
+To analyze the impact of the marketing campaign on the growth of the loyalty program. Specifically, I aim to determine **whether the campaign successfully increased the number of new memberships** by analyzing historical enrollment data.
 
-**Data Source:** Airline Loyalty Program Dataset (Provided by Maven Analytics)
+**Data Source & Citation:**
+* **Dataset:** Airline Loyalty Program
+* **Source:** [Maven Analytics Data Playground](https://www.mavenanalytics.io/data-playground)
+* **License/Attribution:** This dataset is provided by Maven Analytics for educational and portfolio usage.
 
-**Tools Used:** **SQL (Google BigQuery):** Data cleaning, joining tables, and aggregation.
-**Tableau:** Data visualization (Planned).
+**Tools Used:**
+* **SQL (Google BigQuery):** Data cleaning, time-series aggregation.
+* **Tableau:** Data visualization.
 
 ---
 
 ## 2. Process (Data Cleaning & Validation)
-Before diving into the analysis, I conducted a data audit using SQL in BigQuery to ensure data integrity.
+Before analyzing the campaign's impact, I performed a data audit using SQL in BigQuery to ensure the reliability of the dataset.
 
 ### Data Audit Steps:
-I specifically checked for missing values (NULLs) in critical columns such as `Loyalty Number` (Primary Key) and `Salary` (Key attribute for segmentation), as these are essential for calculating CLV and demographic analysis.
+I verified that there were no missing values (NULLs) in the critical columns required for this analysis: `Loyalty Number` (to count members) and `Salary` (to evaluate member quality).
 
 ### SQL Queries & Results:
 
