@@ -31,3 +31,12 @@ FROM
     `airline_data.flight_activity`
 WHERE
     `Loyalty Number` IS NULL;
+```
+**2. Checking for NULLs in Salary**
+```sql
+SELECT
+    COUNT(*) AS nul_salary_count
+FROM
+    `airline_data.loyalty_history`
+WHERE
+    Salary IS NULL;
