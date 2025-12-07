@@ -39,4 +39,4 @@ SELECT
 FROM
     `airline_data.loyalty_history`
 WHERE
-    Salary IS NULL;
+    `Salary` IS NULL;
