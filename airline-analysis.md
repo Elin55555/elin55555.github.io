@@ -1,42 +1,47 @@
-# Airline Loyalty Program Analysis
+# Airline Loyalty Program Analysis ✈️
 
-## 1. Project Overview
-**Objective:**
-To analyze the impact of the marketing campaign on the growth of the loyalty program. Specifically, I aim to determine **whether the campaign successfully increased the number of new memberships** by analyzing historical enrollment data.
+## Project Overview
+This case study analyzes the loyalty program data of a fictional airline. The goal is to evaluate the impact of the 2018 promotional campaigns on membership growth and retention. By leveraging SQL (BigQuery) for data processing and analysis, this project aims to provide actionable insights for the marketing team to optimize future strategies.
 
-**Data Source & Citation:**
-* **Dataset:** Airline Loyalty Program
-* **Source:** [Maven Analytics Data Playground](https://www.mavenanalytics.io/data-playground)
-* **License/Attribution:** This dataset is provided by Maven Analytics for educational and portfolio usage.
+## 1. Ask
+### Business Task
+The marketing team wants to understand how the recent promotional campaign affected the loyalty program's performance. The primary objective is to determine if the campaign successfully drove new enrollments and maintained member engagement, or if it led to higher churn rates.
 
-**Tools Used:**
-* **SQL (Google BigQuery):** Data cleaning, time-series aggregation.
-* **Tableau:** Data visualization.
+### Key Stakeholders
+* **Marketing Director:** Interested in the ROI of the campaign and its effectiveness in acquiring new members.
+* **Loyalty Program Manager:** Focuses on member retention and the long-term value of the customer base.
+* **Data Analyst (Me):** Responsible for analyzing the data and providing objective recommendations.
+
+### Key Questions
+1.  How did the 2018 campaign impact the number of new memberships compared to previous years?
+2.  Did the campaign attract high-value customers or lead to higher cancellation rates?
+3.  What are the demographic characteristics of the members acquired during the campaign?
 
 ---
 
-## 2. Process (Data Cleaning & Validation)
-Before analyzing the campaign's impact, I performed a data audit using SQL in BigQuery to ensure the reliability of the dataset.
+## 2. Prepare
+### Data Source
+The data used in this analysis is provided by [Maven Analytics](https://mavenanalytics.io/data-playground/airline-loyalty-program). It consists of two main CSV files:
+* `Customer Loyalty History.csv`: Contains customer demographics, enrollment dates, cancellation dates, and loyalty status.
+* `Customer Flight Activity.csv`: Contains detailed records of flight activities, points accumulated, and distance traveled.
 
-### Data Audit Steps:
-I verified that there were no missing values (NULLs) in the critical columns required for this analysis: `Loyalty Number` (to count members) and `Salary` (to evaluate member quality).
+### Tools Used
+* **Google BigQuery:** Used for data warehousing, cleaning, and analysis (SQL).
+* **GitHub:** Used for version control and documentation.
 
-### SQL Queries & Results:
+### Data Organization & Verification (ROCCC)
+I performed a quick assessment of the data using the ROCCC framework:
+* **Reliable:** The dataset is a well-structured educational dataset provided by Maven Analytics.
+* **Original:** While the data is synthetic for educational purposes, it simulates real-world airline data structures.
+* **Comprehensive:** It includes essential fields such as location, gender, education, salary, flight distance, and loyalty points.
+* **Current:** The dataset focuses on historical data (2017-2018), which is suitable for this specific case study on past campaign performance.
+* **Cited:** The data is publicly available via the Maven Analytics Data Playground.
 
-**1. Checking for NULLs in Loyalty Number**
-```sql
-SELECT
-    COUNT(*) AS null_loyalty_number_count
-FROM
-    `airline_data.flight_activity`
-WHERE
-    `Loyalty Number` IS NULL;
-```
-**2. Checking for NULLs in Salary**
-```sql
-SELECT
-    COUNT(*) AS nul_salary_count
-FROM
-    `airline_data.loyalty_history`
-WHERE
-    `Salary` IS NULL;
+### Setup Process
+1.  **Downloaded Data:** Sourced the `.csv` files from Maven Analytics.
+2.  **Cloud Setup:** Created a new project in Google Cloud Platform named `Portfolio-Airline-Analysis`.
+3.  **Data Ingestion:**
+    * Created a dataset named `airline_loyalty` in BigQuery.
+    * Uploaded `Customer Loyalty History.csv` as the table `customer_loyalty_history`.
+    * Uploaded `Customer Flight Activity.csv` as the table `customer_flight_activity`.
+    * Enabled "Auto-detect" for schema to automatically identify data types (String, Integer, Float, Date).
