@@ -27,6 +27,7 @@ The data used in this analysis is provided by [Maven Analytics](https://mavenana
 
 ### Tools Used
 * **Google BigQuery:** Used for data warehousing, cleaning, and analysis (SQL).
+* **Tableau:** Used for creating interactive data visualizations and dashboards.
 * **GitHub:** Used for version control and documentation.
 
 ### Data Organization & Verification (ROCCC)
