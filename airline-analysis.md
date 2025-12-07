@@ -46,3 +46,21 @@ I performed a quick assessment of the data using the ROCCC framework:
     * Uploaded `Customer Loyalty History.csv` as the table `customer_loyalty_history`.
     * Uploaded `Customer Flight Activity.csv` as the table `customer_flight_activity`.
     * Enabled "Auto-detect" for schema to automatically identify data types (String, Integer, Float, Date).
+
+## 3. Process
+In this phase, I cleaned and ensured data integrity using SQL (BigQuery). My goal was to check for null values, duplicates, and data type inconsistencies before moving to analysis.
+
+### Data Cleaning Steps
+
+#### 1. Checking for NULL values
+First, I checked for any missing values in the primary tables. Missing data in key columns like `Loyalty Number` or `Enrollment Year` could skew the analysis.
+
+**Query: Check for NULLs in Customer Loyalty History**
+```sql
+SELECT
+  COUNT(*) AS total_rows,
+  SUM(CASE WHEN Loyalty_Number IS NULL THEN 1 ELSE 0 END) AS null_loyalty_numbers,
+  SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END) AS null_countries,
+  SUM(CASE WHEN Enrollment_Year IS NULL THEN 1 ELSE 0 END) AS null_enrollment_years
+FROM
+  `airline_loyalty.customer_loyalty_history`;
