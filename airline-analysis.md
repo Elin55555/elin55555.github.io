@@ -5,8 +5,8 @@
 
 **Data Source:** Airline Loyalty Program Dataset (Provided by Maven Analytics)
 
-**Tools Used:** * **SQL (Google BigQuery):** Data cleaning, joining tables, and aggregation.
-* **Tableau:** Data visualization (Planned).
+**Tools Used:** **SQL (Google BigQuery):** Data cleaning, joining tables, and aggregation.
+**Tableau:** Data visualization (Planned).
 
 ---
 
