@@ -47,6 +47,8 @@ I performed a quick assessment of the data using the ROCCC framework:
     * Uploaded `Customer Flight Activity.csv` as the table `customer_flight_activity`.
     * Enabled "Auto-detect" for schema to automatically identify data types (String, Integer, Float, Date).
 
+---
+
 ## 3. Process
 In this phase, I cleaned and ensured data integrity using SQL (BigQuery). My goal was to check for null values, duplicates, and data type inconsistencies before moving to analysis.
 
@@ -109,3 +111,48 @@ WHERE
   Distance < 0 OR `Points Accumulated` < 0;
 ```
 Result: No negative values were found.
+
+---
+
+## 4. Analyze
+To answer the business questions, I performed descriptive analysis using SQL. I focused on enrollment trends and cancellation rates to evaluate the effectiveness of the 2018 promotional campaign.
+
+### Analysis 1: Membership Growth Trend (2018 Campaign Impact)
+I aggregated the number of new enrollments by year and month to identify any spikes during the campaign period (2018).
+
+**Query: Count new memberships by Year and Month**
+```sql
+SELECT
+  `Enrollment Year`,
+  `Enrollment Month`,
+  COUNT(*) AS New_Memberships
+FROM
+  `airline_data.loyal_history`
+GROUP BY
+  `Enrollment Year`,
+  `Enrollment Month`
+ORDER BY
+  `Enrollment Year`,
+  `Enrollment Month`;
+```
+Insight: This query allows us to visualize the growth trajectory and pinpoint the exact months where the campaign had the most significant impact.
+
+### Analysis 2: Retention Analysis (Cancellation Rate by Cohort)
+A successful campaign shouldn't just bring in numbers; it should bring in valuable, long-term members. I compared the cancellation rates of members who joined in 2018 versus previous years to check for "churn" quality.
+
+**Query: Calculate Cancellation Rate per Enrollment Year**
+
+```sql
+SELECT
+  `Enrollment Year`,
+  COUNT(*) AS Total_Enrolled,
+  SUM(CASE WHEN `Cancellation Year` IS NOT NULL THEN 1 ELSE 0 END) AS Total_Cancelled,
+  ROUND(SUM(CASE WHEN `Cancellation Year` IS NOT NULL THEN 1 ELSE 0 END) / COUNT(*) * 100, 2) AS Cancellation_Rate_Percent
+FROM
+  `airline_data.loyal_history`
+GROUP BY
+  `Enrollment Year`
+ORDER BY
+  `Enrollment Year`;
+```
+Insight: By calculating the percentage of cancellations for each enrollment year, we can assess if the 2018 cohort is retaining as well as older cohorts.
