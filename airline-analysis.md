@@ -54,13 +54,14 @@ In this phase, I cleaned and ensured data integrity using SQL (BigQuery). My goa
 
 #### 1. Checking for NULL values
 First, I checked for any missing values in the primary tables. Missing data in key columns like `Loyalty Number` or `Enrollment Year` could skew the analysis.
+*Note: Since column names contain spaces, I used backticks (e.g., \`Loyalty Number\`) to reference them correctly in SQL.*
 
 **Query: Check for NULLs in Customer Loyalty History**
 ```sql
 SELECT
   COUNT(*) AS total_rows,
-  SUM(CASE WHEN Loyalty_Number IS NULL THEN 1 ELSE 0 END) AS null_loyalty_numbers,
+  SUM(CASE WHEN `Loyalty Number` IS NULL THEN 1 ELSE 0 END) AS null_loyalty_numbers,
   SUM(CASE WHEN Country IS NULL THEN 1 ELSE 0 END) AS null_countries,
-  SUM(CASE WHEN Enrollment_Year IS NULL THEN 1 ELSE 0 END) AS null_enrollment_years
+  SUM(CASE WHEN `Enrollment Year` IS NULL THEN 1 ELSE 0 END) AS null_enrollment_years
 FROM
-  `airline_loyalty.customer_loyalty_history`;
+  `airline_data.loyal_history`;
