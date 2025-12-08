@@ -79,7 +79,7 @@ FROM
 ```
 Result: No critical NULL values were found in the primary key columns.
 
-####2. Checking for Duplicates
+#### 2. Checking for Duplicates
 Next, I verified that Loyalty Number is unique in the customer history table to ensure there are no duplicate customer profiles.
 
 **Query: Check for duplicate Loyalty Numbers**
@@ -96,7 +96,7 @@ HAVING
 ```
 Result: The query returned no rows, confirming that all Loyalty Numbers are unique.
 
-####3. Handling Negative Values
+#### 3. Handling Negative Values
 I ran a quick check to ensure there were no negative values in columns where it wouldn't make sense (e.g., Distance, Points Accumulated).
 
 **Query: Check for negative values**
