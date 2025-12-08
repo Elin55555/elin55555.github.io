@@ -65,3 +65,47 @@ SELECT
   SUM(CASE WHEN `Enrollment Year` IS NULL THEN 1 ELSE 0 END) AS null_enrollment_years
 FROM
   `airline_data.loyal_history`;
+```
+**Query: Check for NULLs in Customer Flight Activity**
+```sql
+SELECT
+  COUNT(*) AS total_rows,
+  SUM(CASE WHEN `Loyalty Number` IS NULL THEN 1 ELSE 0 END) AS null_loyalty_numbers,
+  SUM(CASE WHEN Year IS NULL THEN 1 ELSE 0 END) AS null_years,
+  SUM(CASE WHEN Month IS NULL THEN 1 ELSE 0 END) AS null_months,
+  SUM(CASE WHEN `Total Flights` IS NULL THEN 1 ELSE 0 END) AS null_flights
+FROM
+  `airline_data.flight_activity`;
+```
+Result: No critical NULL values were found in the primary key columns.
+
+####2. Checking for Duplicates
+Next, I verified that Loyalty Number is unique in the customer history table to ensure there are no duplicate customer profiles.
+
+**Query: Check for duplicate Loyalty Numbers**
+```sql
+SELECT
+  `Loyalty Number`,
+  COUNT(*) as count
+FROM
+  `airline_data.loyal_history`
+GROUP BY
+  `Loyalty Number`
+HAVING
+  count > 1;
+```
+Result: The query returned no rows, confirming that all Loyalty Numbers are unique.
+
+####3. Handling Negative Values
+I ran a quick check to ensure there were no negative values in columns where it wouldn't make sense (e.g., Distance, Points Accumulated).
+
+**Query: Check for negative values**
+```sql
+SELECT
+  COUNT(*) AS negative_values
+FROM
+  `airline_data.flight_activity`
+WHERE
+  Distance < 0 OR `Points Accumulated` < 0;
+```
+Result: No negative values were found.
