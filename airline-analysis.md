@@ -138,7 +138,7 @@ ORDER BY
 Insight: This query allows us to visualize the growth trajectory and pinpoint the exact months where the campaign had the most significant impact.
 
 ### Analysis 2: Retention Analysis (Cancellation Rate by Cohort)
-A successful campaign shouldn't just bring in numbers; it should bring in valuable, long-term members. I compared the cancellation rates of members who joined in 2018 versus previous years to check for "churn" quality.
+A successful campaign shouldn't just bring in numbers; it should bring in valuable, long-term members. I compared the cancellation rates of members who joined in 2018 versus previous years to check the quality of the new cohort.
 
 **Query: Calculate Cancellation Rate per Enrollment Year**
 
@@ -155,7 +155,9 @@ GROUP BY
 ORDER BY
   `Enrollment Year`;
 ```
-Insight: By calculating the percentage of cancellations for each enrollment year, we can assess if the 2018 cohort is retaining as well as older cohorts.
+Insight: By calculating the percentage of cancellations for each enrollment year, I discovered that the 2018 cohort actually has a significantly lower cancellation rate compared to previous years.
+
+---
 
 ## 5. Share
 I visualized the query results using **Tableau** to communicate the findings effectively to stakeholders.
@@ -164,14 +166,14 @@ I visualized the query results using **Tableau** to communicate the findings eff
 This line chart visualizes the trend of new memberships over time.
 * **Key Finding:** There was a significant spike in new enrollments during the 2018 campaign months (February - April), indicating high initial interest.
 
-![Membership Growth Trend](https://via.placeholder.com/600x300.png?text=Insert+Tableau+Screenshot+Here+1)
+<img width="881" height="466" alt="Membership Growth Trend" src="https://github.com/user-attachments/assets/e8d3a31f-adc0-44e0-a6d3-22b8bdd51bcd" />
 
 ### Visualization 2: Retention Rate by Cohort
 This bar chart compares the cancellation rates of members who joined during the 2018 campaign versus those who joined in previous years.
-* **Key Finding:** While the 2018 cohort brought in volume, the cancellation rate is higher compared to the 2017 cohort. This suggests that while the campaign was effective for acquisition, it attracted less loyal customers.
 
-![Retention Rate Comparison](https://via.placeholder.com/600x300.png?text=Insert+Tableau+Screenshot+Here+2)
+* **Key Finding:** The 2018 cohort has the lowest cancellation rate (5.28%) compared to the historical average of around 15-17%. This suggests that the campaign was not only effective for acquisition but also attracted customers who are likely to stay.
 
+<img width="727" height="463" alt="Retention Rate Comparison" src="https://github.com/user-attachments/assets/cb058355-bdc1-438b-baed-bbdd41803353" />
 
 ---
 
@@ -179,10 +181,10 @@ This bar chart compares the cancellation rates of members who joined during the 
 Based on the analysis, I have derived the following conclusions and recommendations for the marketing team.
 
 ### Conclusion
-1.  **Campaign Effectiveness:** The 2018 promotional campaign successfully achieved its goal of increasing new member volume. Enrollments reached an all-time high during the campaign period.
-2.  **Quality of Acquisition:** However, the retention rate for these new members is lower than the historical average. The campaign attracted "promotion-seekers" who were more likely to churn after the initial offer period.
+1.  **Campaign Success:** The 2018 promotional campaign was highly successful in terms of acquisition, driving a significant spike in new memberships.
+2.  **Strong Retention:** Contrary to the risk of "low-quality" acquisition, the 2018 cohort shows a remarkably low cancellation rate (5.28%) compared to older cohorts. This suggests the campaign attracted genuinely interested customers.
 
 ### Recommendations
-1.  **Shift Focus to Retention:** For future campaigns, implement an immediate "onboarding program" to engage new members within the first 3 months to prevent early churn.
-2.  **Targeted Re-engagement:** Launch a specific re-engagement campaign targeting the 2018 cohort, offering incentives for their next flight booking to boost their lifetime value.
-3.  **Refine Targeting:** Analyze the demographics of the high-churn group further to refine audience targeting for the next acquisition campaign, ensuring we attract long-term travelers rather than one-time users.
+1.  **Replicate the Strategy:** Given the high volume and low churn, the marketing strategy used in early 2018 should be analyzed and replicated for future campaigns.
+2.  **Monitor the 2018 Cohort:** While the current cancellation rate is low, it is important to monitor this group as they mature. Ensure their retention remains stable as they pass the 1-year mark.
+3.  **Engagement Focus:** Since these members are staying, shift focus to "Upselling". Encourage them to use their points or book flights to increase their Customer Lifetime Value (CLV).
