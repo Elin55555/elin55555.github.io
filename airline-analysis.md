@@ -165,7 +165,6 @@ This line chart visualizes the trend of new memberships over time.
 * **Key Finding:** There was a significant spike in new enrollments during the 2018 campaign months (February - April), indicating high initial interest.
 
 ![Membership Growth Trend](https://via.placeholder.com/600x300.png?text=Insert+Tableau+Screenshot+Here+1)
-*(Note: Replace this placeholder with your actual Tableau screenshot showing the spike in 2018)*
 
 ### Visualization 2: Retention Rate by Cohort
 This bar chart compares the cancellation rates of members who joined during the 2018 campaign versus those who joined in previous years.
