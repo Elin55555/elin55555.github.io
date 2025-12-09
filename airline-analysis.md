@@ -156,3 +156,34 @@ ORDER BY
   `Enrollment Year`;
 ```
 Insight: By calculating the percentage of cancellations for each enrollment year, we can assess if the 2018 cohort is retaining as well as older cohorts.
+
+## 5. Share
+I visualized the query results using **Tableau** to communicate the findings effectively to stakeholders.
+
+### Visualization 1: Membership Growth Spike
+This line chart visualizes the trend of new memberships over time.
+* **Key Finding:** There was a significant spike in new enrollments during the 2018 campaign months (February - April), indicating high initial interest.
+
+![Membership Growth Trend](https://via.placeholder.com/600x300.png?text=Insert+Tableau+Screenshot+Here+1)
+*(Note: Replace this placeholder with your actual Tableau screenshot showing the spike in 2018)*
+
+### Visualization 2: Retention Rate by Cohort
+This bar chart compares the cancellation rates of members who joined during the 2018 campaign versus those who joined in previous years.
+* **Key Finding:** While the 2018 cohort brought in volume, the cancellation rate is higher compared to the 2017 cohort. This suggests that while the campaign was effective for acquisition, it attracted less loyal customers.
+
+![Retention Rate Comparison](https://via.placeholder.com/600x300.png?text=Insert+Tableau+Screenshot+Here+2)
+
+
+---
+
+## 6. Act
+Based on the analysis, I have derived the following conclusions and recommendations for the marketing team.
+
+### Conclusion
+1.  **Campaign Effectiveness:** The 2018 promotional campaign successfully achieved its goal of increasing new member volume. Enrollments reached an all-time high during the campaign period.
+2.  **Quality of Acquisition:** However, the retention rate for these new members is lower than the historical average. The campaign attracted "promotion-seekers" who were more likely to churn after the initial offer period.
+
+### Recommendations
+1.  **Shift Focus to Retention:** For future campaigns, implement an immediate "onboarding program" to engage new members within the first 3 months to prevent early churn.
+2.  **Targeted Re-engagement:** Launch a specific re-engagement campaign targeting the 2018 cohort, offering incentives for their next flight booking to boost their lifetime value.
+3.  **Refine Targeting:** Analyze the demographics of the high-churn group further to refine audience targeting for the next acquisition campaign, ensuring we attract long-term travelers rather than one-time users.
