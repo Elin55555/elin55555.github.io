@@ -1,84 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Basic Page Needs
-    ================================================== -->
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elin Johansson | Data Analyst Portfolio</title>
-    <meta name="description" content="Your Description Here">
-    <meta name="keywords" content="free boostrap, bootstrap template, freebies, free theme, free website, free portfolio theme, portfolio, personal, cv">
-    <meta name="author" content="Jenn, ThemeForces.com">
+    <meta name="description" content="Data Analyst Portfolio of Elin Johansson">
+    <meta name="keywords" content="data analyst, portfolio, sql, r, tableau, python">
+    <meta name="author" content="Elin Johansson">
     
-    <!-- Favicons
-    ================================================== -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
 
-    <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="css/jasny-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
 
-    <!-- Slider
-    ================================================== -->
     <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
     <link href="css/owl.theme.css" rel="stylesheet" media="screen">
 
-    <!-- Stylesheet
-    ================================================== -->
     <link rel="stylesheet" type="text/css"  href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
 
     <style>
-    /* コンタクトセクションのアイコンリストを強制的に修正 */
-    #contact ul.icons li {
-        list-style-type: none !important; /* あの「・」を絶対に消す命令 */
-        display: inline-block !important; /* 絶対に横並びにする命令 */
+    /* 全体的な微調整 */
+    body {
+        font-family: 'Montserrat', sans-serif; /* フォントを統一 */
     }
-    /* KaggleのSVGアイコンの位置を他のアイコンと揃える微調整 */
+
+    /* コンタクトセクションのアイコン修正 */
+    #contact ul.icons li {
+        list-style-type: none !important;
+        display: inline-block !important;
+    }
     #contact ul.icons li a svg {
         vertical-align: text-bottom !important;
         margin-bottom: 3px !important;
+        transition: fill 0.3s ease;
     }
-</style>
+    #contact ul.icons li a:hover svg {
+        fill: #f0ad4e !important; /* ホバー時に色を変える */
+    }
+
+    /* モダンなポートフォリオカードのデザイン */
+    .portfolio-grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .portfolio-item {
+        margin-bottom: 30px;
+        display: flex;
+    }
+
+    .project-card {
+        background-color: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* 柔らかい影 */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    /* ホバー時の浮き上がりエフェクト */
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .category-badge {
+        background-color: #e1f5fe;
+        color: #0277bd;
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 20px;
+        align-self: center;
+    }
+
+    .project-title {
+        font-size: 22px;
+        margin: 0 0 15px 0;
+        color: #333;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .project-desc {
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        font-size: 15px;
+        flex-grow: 1; /* 高さを揃えるためにテキストエリアを伸ばす */
+    }
+
+    .tags-container {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .tech-tag {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .btn-project {
+        display: block;
+        width: 100%;
+        max-width: 240px;
+        padding: 12px 20px;
+        border-radius: 6px;
+        text-decoration: none !important;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        color: #333;
+        border: 2px solid #333;
+    }
+    .btn-outline:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .btn-solid {
+        background-color: #333;
+        color: white;
+        border: 2px solid #333;
+    }
+    .btn-solid:hover {
+        background-color: #000;
+        border-color: #000;
+        transform: scale(1.02);
+    }
+    </style>
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+    </head>
   <body>
 
-    <!-- Off Canvas Navigation
-    ================================================== -->
-    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas"> <!--- Off Canvas Side Menu -->
-        <div class="close" data-toggle="offcanvas" data-target=".navmenu">
+    <div class="navmenu navmenu-default navmenu-fixed-left offcanvas"> <div class="close" data-toggle="offcanvas" data-target=".navmenu">
             <span class="fa fa-close"></span>
         </div>
         <div class="add-margin"></div>
-        <ul class="nav navmenu-nav"> <!--- Menu -->
-            <li><a href="#home" class="page-scroll">Home</a></li>
+        <ul class="nav navmenu-nav"> <li><a href="#home" class="page-scroll">Home</a></li>
             <li><a href="#meet-us" class="page-scroll">About</a></li>
             <li><a href="#works" class="page-scroll">Portfolio</a></li>
             <li><a href="#contact" class="page-scroll">Contact</a></li>
-        </ul><!--- End Menu -->
-    </div> <!--- End Off Canvas Side Menu -->
-
-    <!-- Home Section -->
-    <div id="home">
+        </ul></div> <div id="home">
         <div class="container text-center">
-            <!-- Navigation -->
             <nav id="menu" data-toggle="offcanvas" data-target=".navmenu">
                 <span class="fa fa-bars"></span>
             </nav>
@@ -97,7 +201,6 @@
         </div>
     </div>
 
-    <!-- Meet Us Section -->
     <div id="meet-us">
      <div class="container">
         <div class="row">
@@ -155,141 +258,136 @@
         </div>
     </div>
 
-    <!-- Overview Video Section -->
-   
-
-    <!-- Services Section -->
-    
-  
-
-    <!-- Call-to-Action Section -->
-    
-
-    <!-- Portfolio Section -->
-  <div class="row" style="display: flex; flex-wrap: wrap;">
-            
-            <div class="col-md-6" style="margin-bottom: 30px;">
-                <div style="background-color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; text-align: center;">
-                    <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 15px;">DATA ANALYTICS</span>
-                    
-                    <h3 style="font-size: 24px; margin: 0 0 15px 0; color: #222; font-weight: bold;">Cyclistic Bike Share Case Study</h3>
-                    
-                    <p style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">
-                        I conducted a comprehensive analysis of over 700,000 ride records using <b>R</b> for data cleaning and processing. Then, I used <b>Tableau</b> to create an interactive dashboard visualizing key differences in user behavior.
-                    </p>
-
-                    <div style="margin-bottom: 30px; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-                        <span style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 5px 10px; border-radius: 6px; font-size: 14px; color: #555;">#RStats</span>
-                        <span style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 5px 10px; border-radius: 6px; font-size: 14px; color: #555;">#DataViz</span>
-                        <span style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 5px 10px; border-radius: 6px; font-size: 14px; color: #555;">#Tableau</span>
-                    </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                        <a href="https://elin55555.github.io/Bike-Share-Case-Study/" target="_blank" style="display: block; width: 100%; max-width: 250px; background-color: #fff; color: #333; border: 2px solid #333; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
-                            View Full Report
-                        </a>
-                        <a href="https://public.tableau.com/app/profile/elin.johansson7551/viz/CyclisticBikeShareAnalysis_17646569427160/CyclisticUsageTrendAnalysis?publish=yes" target="_blank" style="display: block; width: 100%; max-width: 250px; background-color: #333; color: white; border: 2px solid #333; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
-                            View Visualization &rarr;
-                        </a>
-                    </div>
+    <div id="works" class="section-padding" style="padding: 60px 0; background: #f9f9f9;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="section-title">PORTFOLIO</h2>
+                    <div class="line-divider"></div>
                 </div>
             </div>
 
-            <div class="col-md-6" style="margin-bottom: 30px;">
-                <div style="background-color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; text-align: center;">
-                    <span style="background-color: #e1f5fe; color: #0277bd; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; display: inline-block; margin-bottom: 15px;">DATA ANALYTICS</span>
-                    
-                    <h3 style="font-size: 24px; margin: 0 0 15px 0; color: #222; font-weight: bold;">Airline Loyalty Program Analysis</h3>
-                    
-                    <p style="color: #666; line-height: 1.6; margin-bottom: 25px; font-size: 16px;">
-                        I evaluated the effectiveness of a marketing campaign by analyzing customer loyalty data using <b>SQL (BigQuery)</b>. Then, I used <b>Tableau</b> to visualize trends in membership growth and retention rates.
-                    </p>
-
-                    <div style="margin-bottom: 30px; display: flex; justify-content: center; gap: 5px; flex-wrap: wrap;">
-                        <span style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 5px 10px; border-radius: 6px; font-size: 14px; color: #555;">#SQL</span>
-                        <span style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 5px 10px; border-radius: 6px; font-size: 14px; color: #555;">#BigQuery</span>
-                        <span style="background: #f8f9fa; border: 1px solid #e9ecef; padding: 5px 10px; border-radius: 6px; font-size: 14px; color: #555;">#Tableau</span>
-                    </div>
-
-                    <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                        <a href="https://github.com/Elin55555/elin55555.github.io/blob/main/airline-analysis.md" target="_blank" style="display: block; width: 100%; max-width: 250px; background-color: #fff; color: #333; border: 2px solid #333; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
-                            View on GitHub
-                        </a>
-
-                        <a href="https://public.tableau.com/views/AirlineLoyaltyProgramAnalysis_17652543341480/Dashboard1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" style="display: block; width: 100%; max-width: 250px; background-color: #333; color: white; border: 2px solid #333; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
-                            View Visualization &rarr;
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        ```
+            <div class="portfolio-grid">
                 
-    <!-- Contact Section -->
-      
+                <div class="col-md-6 portfolio-item">
+                    <div class="project-card">
+                        <span class="category-badge">DATA ANALYTICS</span>
+                        
+                        <h3 class="project-title">Cyclistic Bike Share Case Study</h3>
+                        
+                        <p class="project-desc">
+                            I conducted a comprehensive analysis of over 700,000 ride records using <b>R</b> for data cleaning and processing. Then, I used <b>Tableau</b> to create an interactive dashboard visualizing key differences in user behavior.
+                        </p>
+
+                        <div class="tags-container">
+                            <span class="tech-tag">#RStats</span>
+                            <span class="tech-tag">#DataViz</span>
+                            <span class="tech-tag">#Tableau</span>
+                        </div>
+
+                        <div class="btn-container">
+                            <a href="https://elin55555.github.io/Bike-Share-Case-Study/" target="_blank" class="btn-project btn-outline">
+                                View Full Report
+                            </a>
+                            <a href="https://public.tableau.com/app/profile/elin.johansson7551/viz/CyclisticBikeShareAnalysis_17646569427160/CyclisticUsageTrendAnalysis?publish=yes" target="_blank" class="btn-project btn-solid">
+                                View Visualization &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 portfolio-item">
+                    <div class="project-card">
+                        <span class="category-badge">DATA ANALYTICS</span>
+                        
+                        <h3 class="project-title">Airline Loyalty Program Analysis</h3>
+                        
+                        <p class="project-desc">
+                            I evaluated the effectiveness of a marketing campaign by analyzing customer loyalty data using <b>SQL (BigQuery)</b>. Then, I used <b>Tableau</b> to visualize trends in membership growth and retention rates.
+                        </p>
+
+                        <div class="tags-container">
+                            <span class="tech-tag">#SQL</span>
+                            <span class="tech-tag">#BigQuery</span>
+                            <span class="tech-tag">#Tableau</span>
+                        </div>
+
+                        <div class="btn-container">
+                            <a href="https://github.com/Elin55555/elin55555.github.io/blob/main/airline-analysis.md" target="_blank" class="btn-project btn-outline">
+                                View on GitHub
+                            </a>
+
+                            <a href="https://public.tableau.com/views/AirlineLoyaltyProgramAnalysis_17652543341480/Dashboard1?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" class="btn-project btn-solid">
+                                View Visualization &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div>
+    </div>
+    
     <div id="contact" class="section-padding" style="background-color: #222; padding: 80px 0; color: #fff;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                
-                <h2 class="section-title" style="text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 10px;">Contact Me</h2>
-                <div class="line-divider" style="width: 60px; height: 3px; background-color: #f0ad4e; margin: 0 auto 30px;"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    
+                    <h2 class="section-title" style="text-transform: uppercase; letter-spacing: 2px; color: #fff; margin-bottom: 10px;">Contact Me</h2>
+                    <div class="line-divider" style="width: 60px; height: 3px; background-color: #f0ad4e; margin: 0 auto 30px;"></div>
 
-                <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 40px; line-height: 1.8;">
-                    Please feel free to contact me with any questions or project inquiries.<br>
-                    I look forward to hearing from you.
-                </p>
+                    <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 40px; line-height: 1.8;">
+                        Please feel free to contact me with any questions or project inquiries.<br>
+                        I look forward to hearing from you.
+                    </p>
 
-                <div style="margin-bottom: 50px;">
-                    <a href="mailto:elin.j.analytics@gmail.com" style="color: #f0ad4e; font-size: 1.1rem; font-weight: bold; transition: 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#f0ad4e'"> 
-                    elin.j.analytics@gmail.com
-                    </a>
+                    <div style="margin-bottom: 50px;">
+                        <a href="mailto:elin.j.analytics@gmail.com" style="color: #f0ad4e; font-size: 1.1rem; font-weight: bold; transition: 0.3s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#f0ad4e'"> 
+                        elin.j.analytics@gmail.com
+                        </a>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 25px; margin-top: 15px;">
+                        <a href="https://www.linkedin.com/in/elinj-data-analytics" target="_blank" style="color: #fff; font-size: 3rem; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#0077b5'" onmouseout="this.style.color='#fff'">
+                            <i class="fa fa-linkedin-square"></i>
+                        </a>
+
+                        <a href="https://github.com/Elin55555" target="_blank" style="color: #fff; font-size: 3rem; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#6e5494'" onmouseout="this.style.color='#fff'">
+                             <i class="fa fa-github"></i>
+                        </a>
+
+                        <a href="https://www.kaggle.com/elingrande" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 0 320 512" style="fill: #ffffff; transition: fill 0.3s ease;">
+                                <path d="M304.2 501.5L158.4 320.3 298.2 185.2c4.6-4.6 7.5-10.5 7.5-17.3 0-13.3-10.8-24-24-24h-57.1c-6.4 0-12 2.8-15.9 7.4l-79.2 94.8V24c0-13.3-10.8-24-24-24h-51.8c-13.3 0-24 10.8-24 24v463.7c0 13.3 10.8 24 24 24h51.8c13.3 0 24-10.8 24-24v-99.8l26.2-31.3 89 119c4.3 5.7 11.1 9.1 18.2 9.1h60.8c13.3 0 24-10.8 24-24 0-6.5-2.6-12.3-7.1-17.2z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <hr style="border-color: #444; margin-bottom: 30px; margin-top: 50px;">
+                            
+                            <p style="color: #666; font-size: 0.8rem; line-height: 1.6;">
+                                &copy; 2025 Elin. All Rights Reserved.
+                                <br>
+                                <span style="font-size: 0.8rem; color: #444;">
+                                    Template by <a href="https://dribbble.com/jennpereira" target="_blank" style="color: #555; text-decoration: none;">Jenn</a> 
+                                    & <a href="https://dribbble.com/alanpodemski" target="_blank" style="color: #555; text-decoration: none;">Alan</a>
+                                </span>
+                            </p>
+                            
+                            <a href="#home" class="page-scroll" style="color: #666; font-size: 1.1rem; text-decoration: none; margin-top: 10px; display: inline-block;">
+                                Back to Top <i class="fa fa-angle-up"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-                <div style="display: flex; justify-content: center; align-items: center; gap: 25px; margin-top: 15px;">
-
-    <a href="https://www.linkedin.com/in/elinj-data-analytics" target="_blank" style="color: #fff; font-size: 3rem; text-decoration: none;">
-        <i class="fa fa-linkedin-square"></i>
-    </a>
-
-    <a href="https://github.com/Elin55555" target="_blank" style="color: #fff; font-size: 3rem; text-decoration: none;">
-         <i class="fa fa-github"></i>
-    </a>
-
-    <a href="https://www.kaggle.com/elingrande" target="_blank" style="display: flex; align-items: center; text-decoration: none;">
-        <svg xmlns="http://www.w3.org/2000/svg" height="42" viewBox="0 0 320 512" style="fill: #ffffff;">
-            <path d="M304.2 501.5L158.4 320.3 298.2 185.2c4.6-4.6 7.5-10.5 7.5-17.3 0-13.3-10.8-24-24-24h-57.1c-6.4 0-12 2.8-15.9 7.4l-79.2 94.8V24c0-13.3-10.8-24-24-24h-51.8c-13.3 0-24 10.8-24 24v463.7c0 13.3 10.8 24 24 24h51.8c13.3 0 24-10.8 24-24v-99.8l26.2-31.3 89 119c4.3 5.7 11.1 9.1 18.2 9.1h60.8c13.3 0 24-10.8 24-24 0-6.5-2.6-12.3-7.1-17.2z"/>
-        </svg>
-    </a>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <hr style="border-color: #444; margin-bottom: 30px;">
-                
-                <p style="color: #666; font-size: 0.8rem; line-height: 1.6;">
-                    &copy; 2025 Elin. All Rights Reserved.
-                    <br>
-                    <span style="font-size: 0.8rem; color: #444;">
-                        Template by <a href="https://dribbble.com/jennpereira" target="_blank" style="color: #555; text-decoration: none;">Jenn</a> 
-                        & <a href="https://dribbble.com/alanpodemski" target="_blank" style="color: #555; text-decoration: none;">Alan</a>
-                    </span>
-                </p>
-                
-                <a href="#home" class="page-scroll" style="color: #666; font-size: 1.1rem; text-decoration: none; margin-top: 10px; display: inline-block;">
-                    Back to Top <i class="fa fa-angle-up"></i>
-                </a>
             </div>
         </div>
     </div>
-</div>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/SmoothScroll.js"></script>
     <script type="text/javascript" src="js/jasny-bootstrap.min.js"></script>
@@ -307,8 +405,6 @@
       });
     </script>
 
-    <!-- Javascripts
-    ================================================== -->
     <script type="text/javascript" src="js/main.js"></script>
 
   </body>
